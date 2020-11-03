@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="student" class="com.zensar.spring.beans.Student">
+	<property name="rollNumber">
+		<value>101</value>
+	</property>
+	<property name="studentName">
+	 <list>
+		<value>Rajesh</value>
+		<value>raju</value>
+	</list>
+	</property>
+	<property name="marks" >
+		<value>40</value>
+	</property>
+	<property name="address">
+		<list>
+			<ref bean="addr1"/>
+			<ref bean="addr2"/>
+		</list>
+	</property>
+	
+	<property name="certification">
+		<props>
+			<prop key="core java" > OCP</prop>
+			<prop key="adv java"> OCWCD</prop>
+			<prop key="java"> OCPJP</prop>
+		</props>
+	</property>
+	
+</bean>
+
+<bean id="addr1" class="com.zensar.spring.beans.Address">
+	<property name="pinCode" value="411016"></property>
+	<property name="city" value="Pune"></property>
+	<property name="state" value="Maha"></property>
+</bean>
+
+
+<bean id="addr2" class="com.zensar.spring.beans.Address">
+	<property name="pinCode" value="111222"></property>
+	<property name="city" value="Indore"></property>
+	<property name="state" value="MP"></property>
+</bean>
+
+<bean id="certification" class="com.zensar.spring.beans.Certification">
+	<property name="certificationId" value="1"></property>
+	<property name="certificationName" value="OCPJP"></property>
+</bean>
+	
+</beans>

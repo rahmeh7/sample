@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="student" class="com.zensar.spring.beans.Student">
+	<constructor-arg value="10"/>
+	<constructor-arg value="Rohini"/>
+	<constructor-arg value="70"/>
+	<constructor-arg>
+		<list>
+			<ref bean="addr1"/>
+			<ref bean="addr2"/>
+		</list>
+	</constructor-arg>
+</bean>
+
+<bean id="addr1" class="com.zensar.spring.beans.Address">
+	<property name="pinCode" value="411016"></property>
+	<property name="city" value="Pune"></property>
+	<property name="state" value="Maha"></property>
+</bean>
+
+
+<bean id="addr2" class="com.zensar.spring.beans.Address">
+	<property name="pinCode" value="111222"></property>
+	<property name="city" value="Indore"></property>
+	<property name="state" value="MP"></property>
+</bean>
+
+
+	
+</beans>

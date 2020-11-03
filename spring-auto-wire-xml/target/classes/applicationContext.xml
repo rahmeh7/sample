@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName">
+
+	<bean id="student" class="com.zensar.spring.beans.Student"
+		autowire="byType">
+		<property name="rollNumber">
+			<value>101</value>
+		</property>
+		<property name="studentName">
+			<value>Rohit</value>
+		</property>
+		<property name="marks">
+			<value>40</value>
+		</property>
+		<!-- <property name="address" ref="addr" /> -->
+	</bean>
+
+	<bean id="addr1" class="com.zensar.spring.beans.Address"
+		autowire-candidate="true">
+		<property name="pinCode" value="411016"></property>
+		<property name="city" value="Pune"></property>
+		<property name="state" value="Maha"></property>
+	</bean>
+
+	<bean id="addr" class="com.zensar.spring.beans.Address"
+		autowire-candidate="true">
+		<property name="pinCode" value="411000"></property>
+		<property name="city" value="XXX"></property>
+		<property name="state" value="YYY"></property>
+	</bean>
+
+
+</beans>

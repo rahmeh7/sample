@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="student" class="com.zensar.spring.beans.Student">
+		<property name="rollNumber" value="123"></property>
+		<property name="studentName" value="RajaRam"></property>
+		<property name="marks" value="80"></property>
+		<property name="address">
+			<bean  class="com.zensar.spring.beans.Address">
+				<property name="pinCode" value="411014"></property>
+				<property name="city" value="Pune"></property>
+				<property name="state" value="Maha"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- <bean id="addr" class="com.zensar.spring.beans.Address"> <property 
+		name="pinCode" value="411014"></property> <property name="city" value="Pune"></property> 
+		<property name="state" value="Maha"></property> </bean> -->
+
+</beans>
